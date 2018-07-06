@@ -1,11 +1,17 @@
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom'
+// @flow
+import * as React from 'react';
+import { render } from 'react-dom';
 
-const App = () => (
-  <div>App works</div>
-)
+type Props = {
+  appName: string
+};
 
-ReactDOM.render(
-  <App/>,
-  document.getElementById('app-target')
-)
+const App = ({ appName }: Props) => <div>{appName} works</div>;
+
+const element: HTMLElement | null =  document.getElementById('app-target');
+
+if (!element) {
+  throw new Error("couldn't find element with id 'app-target'");
+}
+
+render(<App appName="Poem Nubs" />, element);
