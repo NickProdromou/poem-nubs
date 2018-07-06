@@ -2,13 +2,9 @@
 import * as React from 'react';
 import { render } from 'react-dom';
 
-type Props = {
-  appName: string
-};
+import App from './components/App';
 
-const App = ({ appName }: Props) => <div>{appName} works</div>;
-
-const element: HTMLElement | null =  document.getElementById('app-target');
+const element: HTMLElement | null = document.getElementById('app-target');
 
 if (!element) {
   throw new Error("couldn't find element with id 'app-target'");
