@@ -4,7 +4,8 @@
   "plugins": ["react", "jsx-a11y", "import", "flowtype"],
   "env": {
     "browser": true,
-    "node": true
+    "node": true,
+    "jest": true
   },
   "rules": {
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]

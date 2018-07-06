@@ -7,7 +7,9 @@
     "dev": "parcel index.html",
     "prod": "parcel build index.html",
     "flow": "flow-watch",
-    "lint": "eslint ./src --ext .js,.jsx --ignore-pattern node_modules/"
+    "lint": "eslint ./src --ext .js,.jsx --ignore-pattern node_modules/",
+    "test": "jest --watch",
+    "test:once": "jest"
   },
   "repository": {
     "type": "git",
@@ -19,31 +21,37 @@
     "url": "https://github.com/NickProdromou/poem-nubs/issues"
   },
   "homepage": "https://github.com/NickProdromou/poem-nubs#readme",
+  "dependencies": {
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme": "^3.3.0"
+  },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-eslint": "^8.2.5",
     "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
+    "babel-preset-flow": "^6.23.0",
+    "babel-preset-react": "^6.24.1",    
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^17.0.0",
     "eslint-plugin-flowtype": "^2.49.3",
     "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-jsx-a11y": "^6.1.0",
     "eslint-plugin-react": "^7.10.0",
+    "flow-bin": "^0.75.0",
+    "flow-watch": "^1.1.3",
     "husky": "^1.0.0-rc.12",
+    "jest": "^23.3.0",
     "parcel-bundler": "^1.9.4",
     "prettier-eslint": "^8.8.2"
   },
-  "dependencies": {
-    "babel-preset-flow": "^6.23.0",
-    "flow-bin": "^0.75.0",
-    "flow-watch": "^1.1.3",
-    "react": "^16.4.1",
-    "react-dom": "^16.4.1"
-  },
   "husky": {
     "hooks": {
-      "pre-push": "npm run lint"
+      "pre-push": "npm run lint && npm run test:once"
     }
+  },
+  "jest": {
+    "setupTestFrameworkScriptFile": "./src/setupTests.js"
   }
 }
