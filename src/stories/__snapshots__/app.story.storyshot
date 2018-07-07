@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots App with different text 1`] = `
+<div>
+  mork
+  works
+</div>
+`;
+
+exports[`Storyshots App with text 1`] = `
+<div>
+  foobar
+  works
+</div>
+`;
