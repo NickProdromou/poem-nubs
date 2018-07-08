@@ -18,7 +18,7 @@ describe('App Component', () => {
     });
 
     test('rendered div contains the correct text', () => {
-      expect(wrapper.find('div').text()).toBe('Poem nubsworks');
+      expect(wrapper.find('div').text()).toBe('Poem nubs works');
     });
   });
 });

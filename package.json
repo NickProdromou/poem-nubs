@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "parcel index.html",
     "prod": "parcel build index.html",
+    "flush": "rm -rf dist .cache",
     "flow": "flow-watch",
     "lint": "eslint ./src --ext .js,.jsx --ignore-pattern node_modules/",
     "test": "jest --watch",
@@ -29,8 +30,14 @@
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "enzyme-to-json": "^3.3.4",
+    "grid-styled": "^4.3.2",
+    "normalize.css": "^8.0.0",
     "react": "^16.4.1",
-    "react-dom": "^16.4.1"
+    "react-dom": "^16.4.1",
+    "styled-components": "^3.3.3",
+    "styled-media-query": "^2.0.2",
+    "typography": "^0.16.17",
+    "webfontloader": "^1.6.28"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

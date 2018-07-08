@@ -3,13 +3,13 @@
 exports[`Storyshots App with different text 1`] = `
 <div>
   mork
-  works
+   works
 </div>
 `;
 
 exports[`Storyshots App with text 1`] = `
 <div>
   foobar
-  works
+   works
 </div>
 `;
