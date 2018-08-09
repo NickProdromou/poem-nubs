@@ -4,14 +4,17 @@
   "description": "tba",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel index.html",
+    "run:dev": "parcel index.html",
     "prod": "parcel build index.html",
     "flush": "rm -rf dist .cache",
     "flow": "flow-watch",
-    "lint": "eslint ./src --ext .js,.jsx --ignore-pattern node_modules/",
+    "lint:js": "eslint ./src --ext .js,.jsx --ignore-pattern node_modules/",
+    "fmt:js": "prettier --write '.jest/**/*.js' '.storybook/**/*.js' 'src/**/*.js'",
+    "lint": "run-s fmt:js lint:js",
     "test": "jest --watch",
     "test:once": "jest",
-    "storybook": "start-storybook -p 9001 -c .storybook"
+    "run:storybook": "start-storybook -p 9001 -c .storybook",
+    "dev": "run-p run:dev run:storybook"
   },
   "repository": {
     "type": "git",
@@ -24,6 +27,7 @@
   },
   "homepage": "https://github.com/NickProdromou/poem-nubs#readme",
   "dependencies": {
+    "@storybook/addon-knobs": "^3.4.8",
     "@storybook/addon-options": "^3.4.8",
     "@storybook/addon-storyshots": "^3.4.8",
     "@storybook/react": "^3.4.8",
@@ -31,10 +35,11 @@
     "enzyme-adapter-react-16": "^1.1.1",
     "enzyme-to-json": "^3.3.4",
     "grid-styled": "^4.3.2",
+    "jest-styled-components": "^5.0.1",
     "normalize.css": "^8.0.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
-    "styled-components": "^3.3.3",
+    "styled-components": "^3.4.2",
     "styled-media-query": "^2.0.2",
     "typography": "^0.16.17",
     "webfontloader": "^1.6.28"
@@ -42,21 +47,27 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-eslint": "^8.2.5",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-flow": "^6.23.0",
     "babel-preset-react": "^6.24.1",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^17.0.0",
+    "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-flowtype": "^2.49.3",
     "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-jsx-a11y": "^6.1.0",
+    "eslint-plugin-prettier": "^2.6.2",
     "eslint-plugin-react": "^7.10.0",
     "flow-bin": "^0.75.0",
     "flow-watch": "^1.1.3",
     "husky": "^1.0.0-rc.12",
     "jest": "^23.3.0",
+    "npm-run-all": "^4.1.3",
     "parcel-bundler": "^1.9.4",
-    "prettier-eslint": "^8.8.2"
+    "prettier": "^1.13.7",
+    "prettier-eslint": "^8.8.2",
+    "styled-components-test-utils": "^0.4.1"
   },
   "husky": {
     "hooks": {
@@ -64,6 +75,6 @@
     }
   },
   "jest": {
-    "setupTestFrameworkScriptFile": "./src/setupTests.js"
+    "setupTestFrameworkScriptFile": "./.jest/setupTests.js"
   }
 }

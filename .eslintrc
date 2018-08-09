@@ -1,17 +1,27 @@
 {
   "parser": "babel-eslint",
-  "extends": ["airbnb", "plugin:flowtype/recommended"],
-  "plugins": ["react", "jsx-a11y", "import", "flowtype"],
+  "extends": [
+    "airbnb",
+    "plugin:flowtype/recommended",
+    "prettier/flowtype",
+    "prettier/react",
+    "prettier"
+  ],
+  "plugins": ["react", "jsx-a11y", "import", "flowtype", "prettier"],
   "env": {
     "browser": true,
     "node": true,
     "jest": true
   },
   "rules": {
+    "prettier/prettier": "error",
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/jsx-one-expression-per-line": 0,
-    "no-unused-expressions" : [1, {
-      "allowTaggedTemplates" : true
-    }]
+    "no-unused-expressions": [
+      1,
+      {
+        "allowTaggedTemplates": true
+      }
+    ]
   }
 }

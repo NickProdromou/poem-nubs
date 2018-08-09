@@ -7,5 +7,5 @@ setOptions({
 
 configure(() => {
   require('../src/stories/intro.story.js');
-  require('../src/stories/app.story.js');
+  require('../src/stories/Text.story.js');
 }, module);

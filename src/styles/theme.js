@@ -24,6 +24,9 @@ export type FontSettings = {
   tiny: string,
   detail: string,
   ui: string,
+  h6: string,
+  h5: string,
+  h4: string,
   h3: string,
   h2: string,
   h1: string,
@@ -41,14 +44,14 @@ export type Breakpoints = {
   xLarge: string,
 };
 
-export type Theme = {
-  colours: Colours,
-  spacing: any,
-  breakpoints: Breakpoints,
-  fontSizes: FontSettings,
-  lineHeight: FontSettings,
-  fonts: Fonts,
-};
+export interface Theme {
+  colours: Colours;
+  spacing: any;
+  breakpoints: Breakpoints;
+  fontSizes: FontSettings;
+  lineHeight: FontSettings;
+  fonts: Fonts;
+}
 
 export default (): Theme => ({
   colours: {
@@ -79,14 +82,20 @@ export default (): Theme => ({
     tiny: '10px',
     detail: '12px',
     ui: '16px',
-    h3: '18px',
-    h2: '24px',
-    h1: '36px',
+    h6: '22px',
+    h5: '28px',
+    h4: '32px',
+    h3: '32px',
+    h2: '38px',
+    h1: '42px',
   },
   lineHeight: {
     tiny: '0.8em',
     detail: '1em',
     ui: '1.375em',
+    h6: '1.25em',
+    h5: '1.25em',
+    h4: '1.25em',
     h3: '1.25em',
     h2: '1.25',
     h1: '1.05em',

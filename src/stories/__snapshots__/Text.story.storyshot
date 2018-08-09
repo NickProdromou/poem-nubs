@@ -1,0 +1,354 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Text all headings h1-h6 1`] = `
+<ThemeProvider
+  theme={
+    Object {
+      "breakpoints": Object {
+        "large": "1440px",
+        "medium": "1024px",
+        "small": "768px",
+        "xLarge": "2560px",
+      },
+      "colours": Object {
+        "background": "#FFFFFF",
+        "error": "#EEC8C8",
+        "primary": "#5C6C78",
+        "secondary": "#C8DFEE",
+        "success": "#C8EED1",
+        "tertiary": "#E0E0E0",
+      },
+      "fontSizes": Object {
+        "detail": "12px",
+        "h1": "42px",
+        "h2": "38px",
+        "h3": "32px",
+        "h4": "32px",
+        "h5": "28px",
+        "h6": "22px",
+        "tiny": "10px",
+        "ui": "16px",
+      },
+      "fonts": Object {
+        "body": "Open Sans",
+        "heading": "Merriweather",
+      },
+      "lineHeight": Object {
+        "detail": "1em",
+        "h1": "1.05em",
+        "h2": "1.25",
+        "h3": "1.25em",
+        "h4": "1.25em",
+        "h5": "1.25em",
+        "h6": "1.25em",
+        "tiny": "0.8em",
+        "ui": "1.375em",
+      },
+      "spacing": Object {
+        "large": "24px",
+        "larger": "16px",
+        "medium": "12px",
+        "small": "8px",
+        "xLarge": "32px",
+        "xSmall": "4px",
+        "xxLarge": "48px",
+        "xxSmall": "2px",
+      },
+    }
+  }
+>
+  <React.Fragment>
+    <styled.h1
+      font="body"
+      italic={false}
+      lineHeight="ui"
+      size="h1"
+      theme={Object {}}
+      weight="normal"
+    >
+      h1
+    </styled.h1>
+    <styled.h2
+      font="body"
+      italic={false}
+      lineHeight="ui"
+      size="h2"
+      theme={Object {}}
+      weight="normal"
+    >
+      h2
+    </styled.h2>
+    <styled.h3
+      font="body"
+      italic={false}
+      lineHeight="ui"
+      size="h3"
+      theme={Object {}}
+      weight="normal"
+    >
+      h3
+    </styled.h3>
+    <styled.h4
+      font="body"
+      italic={false}
+      lineHeight="ui"
+      size="h4"
+      theme={Object {}}
+      weight="normal"
+    >
+      h4
+    </styled.h4>
+    <styled.h5
+      font="body"
+      italic={false}
+      lineHeight="ui"
+      size="h5"
+      theme={Object {}}
+      weight="normal"
+    >
+      h5
+    </styled.h5>
+    <styled.h6
+      font="body"
+      italic={false}
+      lineHeight="ui"
+      size="h6"
+      theme={Object {}}
+      weight="normal"
+    >
+      h6
+    </styled.h6>
+  </React.Fragment>
+</ThemeProvider>
+`;
+
+exports[`Storyshots Text all props 1`] = `
+<ThemeProvider
+  theme={
+    Object {
+      "breakpoints": Object {
+        "large": "1440px",
+        "medium": "1024px",
+        "small": "768px",
+        "xLarge": "2560px",
+      },
+      "colours": Object {
+        "background": "#FFFFFF",
+        "error": "#EEC8C8",
+        "primary": "#5C6C78",
+        "secondary": "#C8DFEE",
+        "success": "#C8EED1",
+        "tertiary": "#E0E0E0",
+      },
+      "fontSizes": Object {
+        "detail": "12px",
+        "h1": "42px",
+        "h2": "38px",
+        "h3": "32px",
+        "h4": "32px",
+        "h5": "28px",
+        "h6": "22px",
+        "tiny": "10px",
+        "ui": "16px",
+      },
+      "fonts": Object {
+        "body": "Open Sans",
+        "heading": "Merriweather",
+      },
+      "lineHeight": Object {
+        "detail": "1em",
+        "h1": "1.05em",
+        "h2": "1.25",
+        "h3": "1.25em",
+        "h4": "1.25em",
+        "h5": "1.25em",
+        "h6": "1.25em",
+        "tiny": "0.8em",
+        "ui": "1.375em",
+      },
+      "spacing": Object {
+        "large": "24px",
+        "larger": "16px",
+        "medium": "12px",
+        "small": "8px",
+        "xLarge": "32px",
+        "xSmall": "4px",
+        "xxLarge": "48px",
+        "xxSmall": "2px",
+      },
+    }
+  }
+>
+  <styled.p
+    font="body"
+    inline={false}
+    italic={false}
+    lineHeight="ui"
+    size="ui"
+    theme={Object {}}
+    weight="regular"
+  >
+    Type some words here
+  </styled.p>
+</ThemeProvider>
+`;
+
+exports[`Storyshots Text nesting 1`] = `
+<ThemeProvider
+  theme={
+    Object {
+      "breakpoints": Object {
+        "large": "1440px",
+        "medium": "1024px",
+        "small": "768px",
+        "xLarge": "2560px",
+      },
+      "colours": Object {
+        "background": "#FFFFFF",
+        "error": "#EEC8C8",
+        "primary": "#5C6C78",
+        "secondary": "#C8DFEE",
+        "success": "#C8EED1",
+        "tertiary": "#E0E0E0",
+      },
+      "fontSizes": Object {
+        "detail": "12px",
+        "h1": "42px",
+        "h2": "38px",
+        "h3": "32px",
+        "h4": "32px",
+        "h5": "28px",
+        "h6": "22px",
+        "tiny": "10px",
+        "ui": "16px",
+      },
+      "fonts": Object {
+        "body": "Open Sans",
+        "heading": "Merriweather",
+      },
+      "lineHeight": Object {
+        "detail": "1em",
+        "h1": "1.05em",
+        "h2": "1.25",
+        "h3": "1.25em",
+        "h4": "1.25em",
+        "h5": "1.25em",
+        "h6": "1.25em",
+        "tiny": "0.8em",
+        "ui": "1.375em",
+      },
+      "spacing": Object {
+        "large": "24px",
+        "larger": "16px",
+        "medium": "12px",
+        "small": "8px",
+        "xLarge": "32px",
+        "xSmall": "4px",
+        "xxLarge": "48px",
+        "xxSmall": "2px",
+      },
+    }
+  }
+>
+  <styled.p
+    font="body"
+    italic={false}
+    lineHeight="ui"
+    size="ui"
+    theme={Object {}}
+    weight="normal"
+  >
+    <styled.h2
+      font="body"
+      italic={false}
+      lineHeight="ui"
+      size="ui"
+      theme={Object {}}
+      weight="normal"
+    >
+      This is a h2 tag
+    </styled.h2>
+     this is text inside a P tag
+    <styled.span
+      font="body"
+      italic={false}
+      lineHeight="ui"
+      size="ui"
+      theme={Object {}}
+      weight="bold"
+    >
+       this will render in a span
+    </styled.span>
+  </styled.p>
+</ThemeProvider>
+`;
+
+exports[`Storyshots Text without props 1`] = `
+<ThemeProvider
+  theme={
+    Object {
+      "breakpoints": Object {
+        "large": "1440px",
+        "medium": "1024px",
+        "small": "768px",
+        "xLarge": "2560px",
+      },
+      "colours": Object {
+        "background": "#FFFFFF",
+        "error": "#EEC8C8",
+        "primary": "#5C6C78",
+        "secondary": "#C8DFEE",
+        "success": "#C8EED1",
+        "tertiary": "#E0E0E0",
+      },
+      "fontSizes": Object {
+        "detail": "12px",
+        "h1": "42px",
+        "h2": "38px",
+        "h3": "32px",
+        "h4": "32px",
+        "h5": "28px",
+        "h6": "22px",
+        "tiny": "10px",
+        "ui": "16px",
+      },
+      "fonts": Object {
+        "body": "Open Sans",
+        "heading": "Merriweather",
+      },
+      "lineHeight": Object {
+        "detail": "1em",
+        "h1": "1.05em",
+        "h2": "1.25",
+        "h3": "1.25em",
+        "h4": "1.25em",
+        "h5": "1.25em",
+        "h6": "1.25em",
+        "tiny": "0.8em",
+        "ui": "1.375em",
+      },
+      "spacing": Object {
+        "large": "24px",
+        "larger": "16px",
+        "medium": "12px",
+        "small": "8px",
+        "xLarge": "32px",
+        "xSmall": "4px",
+        "xxLarge": "48px",
+        "xxSmall": "2px",
+      },
+    }
+  }
+>
+  <styled.p
+    font="body"
+    italic={false}
+    lineHeight="ui"
+    size="ui"
+    theme={Object {}}
+    weight="normal"
+  >
+    example text foobar
+  </styled.p>
+</ThemeProvider>
+`;
