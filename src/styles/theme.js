@@ -1,57 +1,5 @@
 // @flow
-
-export type Colours = {
-  background: string,
-  primary: string,
-  secondary: string,
-  tertiary: string,
-  success: string,
-  error: string,
-};
-
-export type Spacing = {
-  xxSmall: string,
-  xSmall: string,
-  small: string,
-  medium: string,
-  larger: string,
-  large: string,
-  xLarge: string,
-  xxLarge: string,
-};
-
-export type FontSettings = {
-  tiny: string,
-  detail: string,
-  ui: string,
-  h6: string,
-  h5: string,
-  h4: string,
-  h3: string,
-  h2: string,
-  h1: string,
-};
-
-export type Fonts = {
-  heading: string,
-  body: string,
-};
-
-export type Breakpoints = {
-  small: string,
-  medium: string,
-  large: string,
-  xLarge: string,
-};
-
-export interface Theme {
-  colours: Colours;
-  spacing: any;
-  breakpoints: Breakpoints;
-  fontSizes: FontSettings;
-  lineHeight: FontSettings;
-  fonts: Fonts;
-}
+import type { Theme } from '../types/Theme';
 
 export default (): Theme => ({
   colours: {

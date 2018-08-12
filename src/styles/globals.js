@@ -17,6 +17,10 @@ body {
   font-size: 16px;
 }
 
+#app-target {
+  flex: 1;
+}
+
 h1,
 h2,
 h3 {

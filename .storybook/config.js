@@ -8,4 +8,5 @@ setOptions({
 configure(() => {
   require('../src/stories/intro.story.js');
   require('../src/stories/Text.story.js');
+  require('../src/stories/Wrapper.story.js');
 }, module);

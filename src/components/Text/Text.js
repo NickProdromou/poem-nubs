@@ -2,26 +2,16 @@
 import * as React from 'react';
 import Styled, { css } from 'styled-components';
 
-import type { Theme } from '../../styles/theme';
-import type { StyleFunction } from '../../types';
+import type { Theme, ThemeFontSettings, ThemeFonts } from '../../types/Theme';
+import type { StyleFunction } from '../../types/StyleFunction';
 
 type Props = {
-  size?:
-    | 'tiny'
-    | 'detail'
-    | 'ui'
-    | 'h3'
-    | 'h2'
-    | 'h1'
-    | 'h3'
-    | 'h4'
-    | 'h5'
-    | 'h6',
+  size?: ThemeFontSettings,
   children: React.Node,
   weight?: 400 | 500 | 700 | 900 | 'bold' | 'normal' | 'light',
-  lineHeight?: number,
+  lineHeight?: ThemeFontSettings,
   italic?: boolean,
-  font?: 'heading' | 'body',
+  font?: ThemeFonts,
   theme?: Theme,
 };
 

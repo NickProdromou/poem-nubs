@@ -1,22 +1,22 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { storiesOf } from '@storybook/react';
-import { withKnobs, select, text, boolean } from '@storybook/addon-knobs';
+import { withKnobs, text, boolean } from '@storybook/addon-knobs';
+
+import createSelectKnob from './utils/createSelectKnob';
+import { sizes, weights, fonts } from './utils/themeProps';
 
 import theme from '../styles/theme';
 import Text from '../components/Text/Text';
 
-const stories = storiesOf('Text', module);
-
-const sizes = ['tiny', 'detail', 'ui', 'h3', 'h2', 'h1'];
-const weights = [400, 500, 700, 900, 'bold', 'regular', 'light'];
-stories.addDecorator(withKnobs);
+const stories = storiesOf('Text', module).addDecorator(withKnobs);
 
 stories.add('without props', () => (
   <ThemeProvider theme={theme()}>
     <Text.p>example text foobar</Text.p>
   </ThemeProvider>
 ));
+
 stories.add('nesting', () => (
   <ThemeProvider theme={theme()}>
     <Text.p>
@@ -27,54 +27,23 @@ stories.add('nesting', () => (
 ));
 
 stories.add('all props', () => {
-  const sizeLabel = 'size';
-  const sizeOptions = sizes.reduce((accum, size) => {
-    const newAccum = {
-      ...accum,
-      [size]: size,
-    };
-    return newAccum;
-  }, {});
-  const sizeDefault = 'ui';
-
-  const lineHeightLabel = 'lineHeight';
-  const lineHeightOptions = sizeOptions;
-  const lineHeightDefault = 'ui';
-
-  const fontWeightLabel = 'weight';
-  const fontWeightOptions = weights.reduce((accum, weight) => {
-    const newAccum = {
-      ...accum,
-      [weight]: weight,
-    };
-    return newAccum;
-  }, {});
-  const fontWeightDefault = 'regular';
-
-  const label = 'content';
-  const defaultValue = 'Type some words here';
-
-  const fontLabel = 'font family';
-  const fontOptions = {
-    body: 'body',
-    heading: 'heading',
-  };
-  const fontDefault = 'body';
+  const sizeKnob = createSelectKnob('size', sizes, 'ui');
+  const lineHeightKnob = createSelectKnob('lineHeight', sizes, 'ui');
+  const fontWeightKnob = createSelectKnob('weight', weights, 'regular');
+  const fontKnob = createSelectKnob('font', fonts, 'body');
+  const italicKnob = boolean('italic', false);
+  const editableContent = text('content', 'Type some words here');
 
   return (
     <ThemeProvider theme={theme()}>
       <Text.p
-        size={select(sizeLabel, sizeOptions, sizeDefault)}
-        lineHeight={select(
-          lineHeightLabel,
-          lineHeightOptions,
-          lineHeightDefault,
-        )}
-        weight={select(fontWeightLabel, fontWeightOptions, fontWeightDefault)}
-        font={select(fontLabel, fontOptions, fontDefault)}
-        inline={boolean('inline', false)}
+        size={sizeKnob}
+        lineHeight={lineHeightKnob}
+        weight={fontWeightKnob}
+        font={fontKnob}
+        italic={italicKnob}
       >
-        {text(label, defaultValue)}
+        {editableContent}
       </Text.p>
     </ThemeProvider>
   );
