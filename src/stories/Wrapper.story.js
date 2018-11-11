@@ -15,7 +15,7 @@ const stories = storiesOf('Wrapper', module).addDecorator(withKnobs);
 stories.add('default props', () => (
   <ThemeProvider theme={theme()}>
     <Wrapper>
-      <Text.h1>This will be wrapped at 1024px</Text.h1>
+      <Text tag="h1">This will be wrapped at 1024px</Text>
     </Wrapper>
   </ThemeProvider>
 ));
@@ -27,7 +27,9 @@ stories.add('all props', () => {
   return (
     <ThemeProvider theme={theme()}>
       <Wrapper colour={colourKnob} constrain={constrainKnob}>
-        <Text.span weight="bold">Some content to wrap</Text.span>
+        <Text tag="span" weight="bold">
+          Some content to wrap
+        </Text>
       </Wrapper>
     </ThemeProvider>
   );

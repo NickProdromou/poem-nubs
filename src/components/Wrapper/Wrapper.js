@@ -43,7 +43,7 @@ const Wrapper = Styled.div`
 `;
 
 Wrapper.defaultProps = {
-  colour: 'background',
+  colour: 'none',
   constrain: true,
 };
 

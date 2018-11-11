@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import Layout from './Layout';
-import Header from '../../components/Header/Header';
+import AppHeader from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 
 describe('Layout [Container]', () => {
@@ -20,7 +20,7 @@ describe('Layout [Container]', () => {
       });
 
       test('it renders a <Header /> component', () => {
-        const header = wrapper.find(Header);
+        const header = wrapper.find(AppHeader);
         expect(header).toHaveLength(1);
       });
 

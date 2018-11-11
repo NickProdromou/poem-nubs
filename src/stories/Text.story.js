@@ -13,16 +13,19 @@ const stories = storiesOf('Text', module).addDecorator(withKnobs);
 
 stories.add('without props', () => (
   <ThemeProvider theme={theme()}>
-    <Text.p>example text foobar</Text.p>
+    <Text>example text foobar</Text>
   </ThemeProvider>
 ));
 
 stories.add('nesting', () => (
   <ThemeProvider theme={theme()}>
-    <Text.p>
-      <Text.h2>This is a h2 tag</Text.h2> this is text inside a P tag
-      <Text.span weight="bold"> this will render in a span</Text.span>
-    </Text.p>
+    <Text>
+      <Text tag="h2">This is a h2 tag</Text> this is text inside a P tag
+      <Text tag="span" weight="bold">
+        {' '}
+        this will render in a span
+      </Text>
+    </Text>
   </ThemeProvider>
 ));
 
@@ -36,7 +39,7 @@ stories.add('all props', () => {
 
   return (
     <ThemeProvider theme={theme()}>
-      <Text.p
+      <Text
         size={sizeKnob}
         lineHeight={lineHeightKnob}
         weight={fontWeightKnob}
@@ -44,7 +47,7 @@ stories.add('all props', () => {
         italic={italicKnob}
       >
         {editableContent}
-      </Text.p>
+      </Text>
     </ThemeProvider>
   );
 });
@@ -52,12 +55,24 @@ stories.add('all props', () => {
 stories.add('all headings h1-h6', () => (
   <ThemeProvider theme={theme()}>
     <React.Fragment>
-      <Text.h1 size="h1">h1</Text.h1>
-      <Text.h2 size="h2">h2</Text.h2>
-      <Text.h3 size="h3">h3</Text.h3>
-      <Text.h4 size="h4">h4</Text.h4>
-      <Text.h5 size="h5">h5</Text.h5>
-      <Text.h6 size="h6">h6</Text.h6>
+      <Text tag="h1" size="h1">
+        h1
+      </Text>
+      <Text tag="h2" size="h2">
+        h2
+      </Text>
+      <Text tag="h3" size="h3">
+        h3
+      </Text>
+      <Text tag="h4" size="h4">
+        h4
+      </Text>
+      <Text tag="h5" size="h5">
+        h5
+      </Text>
+      <Text tag="h6" size="h6">
+        h6
+      </Text>
     </React.Fragment>
   </ThemeProvider>
 ));

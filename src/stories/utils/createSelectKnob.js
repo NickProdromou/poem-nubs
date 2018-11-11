@@ -1,11 +1,11 @@
 // @flow
-
 import { select } from '@storybook/addon-knobs';
 
 export default function createSelectKnob(
   label: string,
   values: Array<any>,
   defaultValue: any,
+  groupId: any,
 ): Function {
   return select(
     label,
@@ -17,5 +17,6 @@ export default function createSelectKnob(
       return newAccum;
     }, {}),
     defaultValue,
+    groupId || '',
   );
 }

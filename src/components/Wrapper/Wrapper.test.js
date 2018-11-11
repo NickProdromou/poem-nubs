@@ -44,14 +44,6 @@ describe('Layout [Container]', () => {
         );
       });
 
-      test('it sets correct background colour from theme', () => {
-        const wrapperEl = wrapper.find('Wrapper');
-        expect(wrapperEl).toHaveStyleRule(
-          'background-color',
-          theme().colours.background,
-        );
-      });
-
       test('it constrains the width of the child to max-width of 1024px', () => {
         const wrapperEl = wrapper.find('Wrapper');
         expect(wrapperEl).toHaveStyleRule('max-width', '1024px');

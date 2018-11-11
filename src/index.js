@@ -1,5 +1,4 @@
 // @flow
-
 import 'normalize.css';
 import * as React from 'react';
 import { render } from 'react-dom';
@@ -8,15 +7,14 @@ import WebFont from 'webfontloader';
 import globalStyle from './styles/globals';
 
 import theme from './styles/theme';
-import Layout from './containers/Layout/Layout';
-import Wrapper from './components/Wrapper/Wrapper';
-import Text from './components/Text/Text';
+import AppRouter from './containers/Router/AppRouter';
 
 WebFont.load({
   google: {
     families: ['Merriweather:400,700,900', 'Open Sans:400,500'],
   },
 });
+
 globalStyle();
 
 const element: HTMLElement | null = document.getElementById('app-target');
@@ -27,17 +25,7 @@ if (!element) {
 
 render(
   <ThemeProvider theme={theme()}>
-    <Layout>
-      <Wrapper>
-        <div>
-          <Text.p>
-            Poem Nubs <Text.span>foobar</Text.span>
-          </Text.p>
-          <Text.h1>Poem Nubs</Text.h1>
-          <Text.h2>Poem Nubs</Text.h2>
-        </div>
-      </Wrapper>
-    </Layout>
+    <AppRouter />
   </ThemeProvider>,
   element,
 );

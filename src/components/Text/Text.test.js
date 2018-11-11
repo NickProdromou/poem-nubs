@@ -11,7 +11,7 @@ describe('Text [component]', () => {
       test('renders a <p> tag', () => {
         const wrapper = mount(
           <ThemeProvider theme={theme()}>
-            <Text.p>some text</Text.p>
+            <Text tag="p">some text</Text>
           </ThemeProvider>,
         );
         const pTag = wrapper.find('p');
@@ -20,7 +20,7 @@ describe('Text [component]', () => {
       test('renders with default styles from theme', () => {
         const component = mount(
           <ThemeProvider theme={theme()}>
-            <Text.p>Some text inside the text component</Text.p>
+            <Text>Some text inside the text component</Text>
           </ThemeProvider>,
         );
         const nestedTag = component.find('p');
@@ -35,14 +35,36 @@ describe('Text [component]', () => {
       test('renders a nested <span> within a <p> tag', () => {
         const component = mount(
           <ThemeProvider theme={theme()}>
-            <Text.p>
+            <Text>
               Some text inside the text component{' '}
-              <Text.span>this will be in a span tag</Text.span>
-            </Text.p>
+              <Text tag="span">this will be in a span tag</Text>
+            </Text>
           </ThemeProvider>,
         );
         const pTag = component.find('p');
         expect(pTag.find('span')).toHaveLength(1);
+      });
+    });
+    describe('with props', () => {
+      test('renders with correct styles from theme based on props', () => {
+        const component = mount(
+          <ThemeProvider theme={theme()}>
+            <Text
+              colour="primary"
+              lineHeight="h3"
+              size="ui"
+              italic="true"
+              font="heading"
+            >
+              Some text inside the text component{' '}
+            </Text>
+          </ThemeProvider>,
+        );
+        expect(component).toHaveStyleRule('color', theme().colours.primary);
+        expect(component).toHaveStyleRule('line-height', theme().lineHeight.h3);
+        expect(component).toHaveStyleRule('font-size', theme().fontSizes.ui);
+        expect(component).toHaveStyleRule('font-style', 'italic');
+        expect(component).toHaveStyleRule('font-family', theme().fonts.heading);
       });
     });
   });

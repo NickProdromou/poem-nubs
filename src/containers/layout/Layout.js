@@ -1,7 +1,7 @@
 // @flow
 
 import * as React from 'react';
-import Header from '../../components/Header/Header';
+import AppHeader from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 
 type LayoutProps = {
@@ -10,7 +10,7 @@ type LayoutProps = {
 
 const Layout = ({ children }: LayoutProps) => (
   <div>
-    <Header />
+    <AppHeader />
     <main>{children && children}</main>
     <Footer />
   </div>

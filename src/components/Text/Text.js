@@ -1,82 +1,101 @@
 // @flow
 import * as React from 'react';
-import Styled, { css } from 'styled-components';
+import Styled, { css, type ReactComponentStyled } from 'styled-components';
 
-import type { Theme, ThemeFontSettings, ThemeFonts } from '../../types/Theme';
+import type {
+  Theme,
+  ThemeFontSettings,
+  ThemeFonts,
+  ThemeColours,
+} from '../../types/Theme';
 import type { StyleFunction } from '../../types/StyleFunction';
 
-type Props = {
-  size?: ThemeFontSettings,
+type TextProps = {
+  tag?: 'p' | 'span' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6',
   children: React.Node,
   weight?: 400 | 500 | 700 | 900 | 'bold' | 'normal' | 'light',
+};
+
+type TextStyleProps = {
+  size?: ThemeFontSettings,
+  weight?: 400 | 500 | 700 | 900 | 'bold' | 'normal' | 'light',
   lineHeight?: ThemeFontSettings,
+  colour?: ThemeColours,
   italic?: boolean,
   font?: ThemeFonts,
   theme?: Theme,
 };
 
-const setFontSize: StyleFunction = ({ theme, size }: Props) =>
+type TextComponentProps = TextStyleProps & TextProps;
+
+const setFontSize: StyleFunction = ({ theme, size }: TextStyleProps) =>
   theme &&
+  size &&
   css`
-    font-size: ${theme.fontSizes[(size: any)]};
+    font-size: ${theme.fontSizes[size]};
   `;
 
-const setFontWeight: StyleFunction = ({ weight }: Props) => css`
+const setFontWeight: StyleFunction = ({ weight }: TextStyleProps) => css`
   font-weight: ${weight};
 `;
 
-const setFontStyle: StyleFunction = ({ italic }: Props) => css`
+const setFontStyle: StyleFunction = ({ italic }: TextStyleProps) => css`
   font-style: ${italic ? 'italic' : 'normal'};
 `;
 
-const setFontFamily: StyleFunction = ({ font, theme }: Props) =>
+const setFontFamily: StyleFunction = ({ font, theme }: TextStyleProps) =>
   theme &&
   font &&
   css`
     font-family: ${theme.fonts[font]};
   `;
 
-const setLineHeight: StyleFunction = ({ lineHeight, theme }: Props) => css`
+const setTextColour: StyleFunction = ({ theme, colour }) =>
+  theme &&
+  colour &&
+  css`
+    color: ${theme.colours[colour]};
+  `;
+
+const setLineHeight: StyleFunction = ({
+  lineHeight,
+  theme,
+}: TextStyleProps) => css`
   line-height: ${theme && lineHeight && theme.lineHeight[lineHeight]};
 `;
 
-const StyledText = Styled.p`
+const TextStyle = (Styled.p.attrs({})`  
   ${props => setFontSize(props)};
   ${props => setFontWeight(props)}
   ${props => setFontStyle(props)}
-  ${props => setLineHeight(props)}
   ${props => setFontFamily(props)}
-`;
+  ${props => setLineHeight(props)}
+  ${props => setTextColour(props)};
+`: ReactComponentStyled<TextStyleProps>);
 
-StyledText.defaultProps = {
+const Text = ({ children, tag, ...rest }: TextComponentProps) => {
+  if (!tag) {
+    return null;
+  }
+  const TextElement: React.ComponentType<TextProps> = TextStyle.withComponent(
+    tag,
+  );
+
+  TextElement.displayName = `Text.${tag}`;
+
+  return <TextElement {...rest}>{children}</TextElement>;
+};
+
+Text.displayName = 'Text';
+
+Text.defaultProps = {
+  tag: 'p',
   size: 'ui',
   weight: 'normal',
   lineHeight: 'ui',
   italic: false,
   font: 'body',
-  theme: {},
-};
-
-interface TextComponent {
-  p: React.ComponentType<Props>;
-  span: React.ComponentType<Props>;
-  h1: React.ComponentType<Props>;
-  h2: React.ComponentType<Props>;
-  h3: React.ComponentType<Props>;
-  h4: React.ComponentType<Props>;
-  h5: React.ComponentType<Props>;
-  h6: React.ComponentType<Props>;
-}
-
-const Text: TextComponent = {
-  p: StyledText,
-  span: StyledText.withComponent('span'),
-  h1: StyledText.withComponent('h1'),
-  h2: StyledText.withComponent('h2'),
-  h3: StyledText.withComponent('h3'),
-  h4: StyledText.withComponent('h4'),
-  h5: StyledText.withComponent('h5'),
-  h6: StyledText.withComponent('h6'),
+  colour: 'text',
 };
 
 export default Text;

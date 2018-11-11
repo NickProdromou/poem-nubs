@@ -6,7 +6,8 @@ export type ThemeColours =
   | 'secondary'
   | 'tertiary'
   | 'success'
-  | 'error';
+  | 'error'
+  | 'text';
 
 export type Colours = {
   [ThemeColours]: string,
@@ -42,6 +43,12 @@ export type FontSettings = {
   [ThemeFontSettings]: string,
 };
 
+export type FontWeights = 400 | 500 | 700 | 900 | 'bold' | 'normal' | 'light';
+
+export type FontWeightSettings = {
+  [FontWeights]: string,
+};
+
 export type ThemeFonts = 'heading' | 'body';
 
 export type Fonts = {
@@ -50,14 +57,17 @@ export type Fonts = {
 
 export type ThemeBreakpoints = 'small' | 'medium' | 'large' | 'xLarge';
 
-export type Breakpoints = {
+export type MediaQueryBreakpoints = {
   [ThemeBreakpoints]: string,
 };
 
+export type GridBreakpoints = string[];
+
 export interface Theme {
   colours: Colours;
-  spacing: any;
-  breakpoints: Breakpoints;
+  spacing: Spacing;
+  gridBreakpoints: GridBreakpoints;
+  mediaQueryBreakpoints: MediaQueryBreakpoints;
   fontSizes: FontSettings;
   lineHeight: FontSettings;
   fonts: Fonts;
