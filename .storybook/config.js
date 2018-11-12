@@ -6,7 +6,7 @@ setOptions({
 });
 
 configure(() => {
-  require('../src/stories/intro.story.js');
+  require('../src/stories/theme.story.js');
   require('../src/stories/Text.story.js');
   require('../src/stories/Wrapper.story.js');
   require('../src/stories/List.story.js');

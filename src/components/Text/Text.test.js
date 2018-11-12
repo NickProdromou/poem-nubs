@@ -50,7 +50,7 @@ describe('Text [component]', () => {
         const component = mount(
           <ThemeProvider theme={theme()}>
             <Text
-              colour="primary"
+              colour={{ type: 'primary', shade: 'dark' }}
               lineHeight="h3"
               size="ui"
               italic="true"
@@ -60,7 +60,10 @@ describe('Text [component]', () => {
             </Text>
           </ThemeProvider>,
         );
-        expect(component).toHaveStyleRule('color', theme().colours.primary);
+        expect(component).toHaveStyleRule(
+          'color',
+          theme().colours.primary.dark,
+        );
         expect(component).toHaveStyleRule('line-height', theme().lineHeight.h3);
         expect(component).toHaveStyleRule('font-size', theme().fontSizes.ui);
         expect(component).toHaveStyleRule('font-style', 'italic');

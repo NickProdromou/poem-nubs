@@ -4,21 +4,13 @@ import * as React from 'react';
 import Styled, { css } from 'styled-components';
 
 import type { StyleFunction } from '../../types/StyleFunction';
-import type { Theme, ThemeColours } from '../../types/Theme';
+import type { Theme } from '../../types/Theme';
 
 type WrapperProps = {
   children: React.Node,
-  colour?: ThemeColours,
   constrain?: boolean,
   theme: Theme,
 };
-
-const setBackground: StyleFunction = ({ theme, colour }: WrapperProps) =>
-  theme &&
-  colour &&
-  css`
-    background-color: ${theme.colours[colour]};
-  `;
 
 const constrainChildren: StyleFunction = ({ constrain }: WrapperProps) =>
   constrain
@@ -35,7 +27,6 @@ const wrapperPadding: StyleFunction = ({ theme }) =>
   `;
 
 const Wrapper = Styled.div`  
-  ${props => setBackground(props)}
   ${props => constrainChildren(props)}
   ${props => wrapperPadding(props)}
 
@@ -43,7 +34,6 @@ const Wrapper = Styled.div`
 `;
 
 Wrapper.defaultProps = {
-  colour: 'none',
   constrain: true,
 };
 

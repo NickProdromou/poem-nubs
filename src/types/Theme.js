@@ -1,16 +1,20 @@
 // @flow
+export type ThemeColours = 'primary' | 'neutral' | 'success' | 'error';
 
-export type ThemeColours =
-  | 'background'
-  | 'primary'
-  | 'secondary'
-  | 'tertiary'
-  | 'success'
-  | 'error'
-  | 'text';
+export type ColourScaleValues =
+  | 'lightest'
+  | 'lighter'
+  | 'light'
+  | 'dark'
+  | 'darker'
+  | 'darkest';
+
+export type ColourScale = {
+  [ColourScaleValues]: string,
+};
 
 export type Colours = {
-  [ThemeColours]: string,
+  [ThemeColours]: ColourScale,
 };
 
 export type ThemeSpacing =

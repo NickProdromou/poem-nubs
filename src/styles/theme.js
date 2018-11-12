@@ -3,13 +3,38 @@ import type { Theme } from '../types/Theme';
 
 export default (): Theme => ({
   colours: {
-    background: '#FFFFFF',
-    primary: '#b7dbe8',
-    secondary: '#deeef4',
-    tertiary: '#f1f8fb',
-    success: '#C8EED1',
-    error: '#EEC8C8',
-    text: '#444444',
+    primary: {
+      lightest: '#f1f8fb',
+      lighter: '#deeef4',
+      light: '#b7dbe8',
+      dark: '#43a1c3',
+      darker: '#3383a0',
+      darkest: '#1a4453',
+    },
+    neutral: {
+      lightest: '#e1e7ec',
+      lighter: '#aebece',
+      light: '#919fb2',
+      dark: '#6e7a8b',
+      darker: '#404b5b',
+      darkest: '#202833',
+    },
+    error: {
+      lightest: '#faefef',
+      lighter: '#f4dbdb',
+      light: '#EEC8C8',
+      dark: '#dc8e8e',
+      darker: '#d06767',
+      darkest: '#c44040',
+    },
+    success: {
+      lightest: '#effaf2',
+      lighter: '#dbf4e1',
+      light: '#C8EED1',
+      dark: '#a1e2b0',
+      darker: '#7ad690',
+      darkest: '#40c45f',
+    },
   },
   spacing: {
     xxSmall: '2px',
