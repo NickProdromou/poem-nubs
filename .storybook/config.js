@@ -11,4 +11,5 @@ configure(() => {
   require('../src/stories/Wrapper.story.js');
   require('../src/stories/List.story.js');
   require('../src/stories/Link.story.js');
+  require('../src/stories/Header.story.js');
 }, module);

@@ -35,7 +35,7 @@ export default function calculateSpacingFromTheme(
   return `${rule}:${sizes.reduce((value, size) => {
     let newValue;
 
-    if (size === 0) {
+    if (size === '0' || size === 0) {
       newValue = `${value} ${Number(size)}`;
     } else {
       newValue = `${value} ${theme.spacing[size]}`;

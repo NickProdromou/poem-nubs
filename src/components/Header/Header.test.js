@@ -26,7 +26,7 @@ describe.only('header [Component]', () => {
     });
 
     test('it renders a <Logo/> Component', () => {
-      const headerLogo = wrapper.find('Header__StyledLogo');
+      const headerLogo = wrapper.find('SiteLogo');
       expect(headerLogo).toHaveLength(1);
     });
 
