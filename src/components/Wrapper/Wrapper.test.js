@@ -72,13 +72,6 @@ describe('Layout [Container]', () => {
       test('with constrain set to false', () => {
         expect(wrapper).toHaveStyleRule('max-width', '100%');
       });
-
-      test('with colour set to primary', () => {
-        expect(wrapper).toHaveStyleRule(
-          'background-color',
-          theme().colours.primary,
-        );
-      });
     });
   });
 });

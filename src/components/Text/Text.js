@@ -7,6 +7,7 @@ import type {
   ThemeFontSettings,
   ThemeFonts,
   ThemeColours,
+  ColourScaleValues,
 } from '../../types/Theme';
 import type { StyleFunction } from '../../types/StyleFunction';
 
@@ -20,7 +21,10 @@ type TextStyleProps = {
   size?: ThemeFontSettings,
   weight?: 400 | 500 | 700 | 900 | 'bold' | 'normal' | 'light',
   lineHeight?: ThemeFontSettings,
-  colour?: ThemeColours,
+  colour?: {
+    type: ThemeColours,
+    shade: ColourScaleValues,
+  },
   italic?: boolean,
   font?: ThemeFonts,
   theme?: Theme,
@@ -50,11 +54,12 @@ const setFontFamily: StyleFunction = ({ font, theme }: TextStyleProps) =>
     font-family: ${theme.fonts[font]};
   `;
 
-const setTextColour: StyleFunction = ({ theme, colour }) =>
+const setTextColour: StyleFunction = ({ theme, colour: { type, shade } }) =>
   theme &&
-  colour &&
+  type &&
+  shade &&
   css`
-    color: ${theme.colours[colour]};
+    color: ${theme.colours[type][shade]};
   `;
 
 const setLineHeight: StyleFunction = ({
@@ -95,7 +100,10 @@ Text.defaultProps = {
   lineHeight: 'ui',
   italic: false,
   font: 'body',
-  colour: 'text',
+  colour: {
+    type: 'neutral',
+    shade: 'darkest',
+  },
 };
 
 export default Text;

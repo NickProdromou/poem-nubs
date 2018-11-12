@@ -1,5 +1,4 @@
 // @flow
-
 import * as React from 'react';
 import Text from '../Text/Text';
 
