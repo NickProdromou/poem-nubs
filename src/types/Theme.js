@@ -18,14 +18,16 @@ export type Colours = {
 };
 
 export type ThemeSpacing =
+  | 'xxxSmall'
   | 'xxSmall'
   | 'xSmall'
   | 'small'
   | 'medium'
-  | 'larger'
   | 'large'
+  | 'larger'
   | 'xLarge'
-  | 'xxLarge';
+  | 'xxLarge'
+  | 'xxxLarge';
 
 export type Spacing = {
   [ThemeSpacing]: string,
