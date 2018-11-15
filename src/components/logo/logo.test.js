@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import Logo from './logo';
-import Text from '../text/text';
+import Text from '../text';
 
 describe('Logo [Component]', () => {
   describe('rendering', () => {

@@ -3,8 +3,8 @@ import * as React from 'react';
 import { Flex } from '@rebass/grid';
 
 import navLinks from '../../config/navLinks';
-import Wrapper from '../wrapper/wrapper';
-import List from '../list/list';
+import Wrapper from '../wrapper';
+import List from '../list';
 
 import NavContainer from './navContainer';
 import NavLinkFactory from './navLink';

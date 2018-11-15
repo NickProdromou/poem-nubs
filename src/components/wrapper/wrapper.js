@@ -2,7 +2,6 @@
 
 import * as React from 'react';
 import Styled, { css } from 'styled-components';
-
 import type { StyleFunction } from '../../types/styleFunction';
 import type { Theme } from '../../types/theme';
 

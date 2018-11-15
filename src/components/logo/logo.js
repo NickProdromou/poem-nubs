@@ -1,6 +1,6 @@
 // @flow
 import * as React from 'react';
-import Text from '../text/text';
+import Text from '../text';
 
 const Logo = () => (
   <Text tag="h1" font="heading" weight={500} size="h5" lineHeight="h5">

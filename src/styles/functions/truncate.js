@@ -1,5 +1,4 @@
 // @flow
-
 export default function truncate(width: string): string | Error {
   const regEx = /\d*?(?:px|%)/i;
 

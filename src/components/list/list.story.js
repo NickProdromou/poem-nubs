@@ -2,11 +2,9 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, boolean, array } from '@storybook/addon-knobs';
-import createBoxModel from '../../../.storybook/stories/utils/createBoxModel';
-
+import { createBoxModel, createSelectKnob } from '../../../.storybook/utils';
 import theme from '../../styles/theme';
 import List from './list';
-import createSelectKnob from '../../../.storybook/stories/utils/createSelectKnob';
 
 storiesOf('List', module)
   .addDecorator(withKnobs)

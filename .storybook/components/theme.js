@@ -7,9 +7,9 @@ import {
   type ColourScale,
   type ThemeColours,
   type ThemeSpacing,
-} from '../../../src/types/theme';
-import Text from '../../../src/components/text/text';
-import Wrapper from '../../../src/components/wrapper/wrapper';
+} from '../../src/types/theme';
+import Text from '../../src/components/text';
+import Wrapper from '../../src/components/wrapper';
 
 export const ColourPalette = ({
   colourGroupName,

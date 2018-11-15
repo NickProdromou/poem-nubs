@@ -2,14 +2,12 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, text, boolean } from '@storybook/addon-knobs';
-
-import createSelectKnob from '../../../.storybook/stories/utils/createSelectKnob';
 import {
+  createSelectKnob,
   sizes,
   weights,
   fonts,
-} from '../../../.storybook/stories/utils/themeProps';
-
+} from '../../../.storybook/utils';
 import theme from '../../styles/theme';
 import Text from './text';
 

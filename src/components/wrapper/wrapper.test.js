@@ -2,7 +2,6 @@ import React from 'react';
 import { shallow, mount } from 'enzyme';
 import { ThemeProvider } from 'styled-components';
 import 'jest-styled-components';
-
 import Wrapper from './wrapper';
 import theme from '../../styles/theme';
 

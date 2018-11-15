@@ -1,9 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-
 import Layout from './layout';
-import AppHeader from '../../components/header/header';
-import Footer from '../../components/footer/footer';
+import AppHeader from '../../components/header';
+import Footer from '../../components/footer';
 
 describe('Layout [Container]', () => {
   describe('rendering', () => {

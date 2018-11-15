@@ -2,13 +2,10 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { storiesOf } from '@storybook/react';
 import { withKnobs, boolean } from '@storybook/addon-knobs';
-
-import createSelectKnob from '../../../.storybook/stories/utils/createSelectKnob';
-import { colours } from '../../../.storybook/stories/utils/themeProps';
-
+import { createSelectKnob, colours } from '../../../.storybook/utils';
 import theme from '../../styles/theme';
 import Wrapper from './wrapper';
-import Text from '../text/text';
+import Text from '../text';
 
 const stories = storiesOf('Wrapper', module).addDecorator(withKnobs);
 

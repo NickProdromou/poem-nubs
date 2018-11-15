@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import Link from '../link/link';
+import Link from '../link';
 
 export default function NavLink(activeClassName) {
   return styled(Link)`

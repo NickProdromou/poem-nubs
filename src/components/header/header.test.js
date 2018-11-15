@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import Header from './header';
-import Wrapper from '../wrapper/wrapper';
+import Wrapper from '../wrapper';
 
 import List from '../list/list';
 

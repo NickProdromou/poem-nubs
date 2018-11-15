@@ -1,6 +1,6 @@
 // @flow
 import * as React from 'react';
-import AppHeader from '../../components/header/header';
+import AppHeader from '../../components/header';
 import Footer from '../../components/footer';
 
 type LayoutProps = {
