@@ -6,10 +6,10 @@ setOptions({
 });
 
 configure(() => {
-  require('../src/stories/theme.story.js');
-  require('../src/stories/Text.story.js');
-  require('../src/stories/Wrapper.story.js');
-  require('../src/stories/List.story.js');
-  require('../src/stories/Link.story.js');
-  require('../src/stories/Header.story.js');
+  require('../src/styles/theme.story.js');
+  require('../src/components/text/text.story.js');
+  require('../src/components/wrapper/wrapper.story');
+  require('../src/components/list/list.story.js');
+  require('../src/components/link/link.story.js');
+  require('../src/components/header/header.story');
 }, module);

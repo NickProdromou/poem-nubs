@@ -1,5 +1,5 @@
 // @flow
-import { type Config } from '../types/Config';
+import { type Config } from '../types/config';
 
 import appRoutes from './appRoutes';
 import navLinks from './navLinks';

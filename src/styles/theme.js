@@ -1,5 +1,5 @@
 // @flow
-import type { Theme } from '../types/Theme';
+import type { Theme } from '../types/theme';
 
 export default (): Theme => ({
   colours: {

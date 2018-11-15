@@ -1,5 +1,5 @@
 // @flow
-import { type RouterNavigation } from '../types/RouterNavigation';
+import { type RouterNavigation } from '../types/routerNavigation';
 
 const navLinks: Array<RouterNavigation> = [
   {

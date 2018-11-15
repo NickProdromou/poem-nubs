@@ -7,7 +7,7 @@ import WebFont from 'webfontloader';
 import globalStyle from './styles/globals';
 
 import theme from './styles/theme';
-import AppRouter from './containers/Router/AppRouter';
+import Router from './containers/router/router';
 
 WebFont.load({
   google: {
@@ -25,7 +25,7 @@ if (!element) {
 
 render(
   <ThemeProvider theme={theme()}>
-    <AppRouter />
+    <Router />
   </ThemeProvider>,
   element,
 );

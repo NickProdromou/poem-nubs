@@ -1,6 +1,6 @@
 // @flow
-import Layout from '../containers/Layout/Layout';
-import { type AppRoute } from '../types/Config';
+import Layout from '../containers/layout/layout';
+import { type AppRoute } from '../types/config';
 
 const AppRoutes: Array<AppRoute> = [
   {

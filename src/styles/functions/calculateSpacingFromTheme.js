@@ -1,7 +1,7 @@
 // @flow
 import { type Interpolation } from 'styled-components';
-import { type Theme } from '../../types/Theme';
-import { type BoxModel } from '../../types/BoxModel';
+import { type Theme } from '../../types/theme';
+import { type BoxModel } from '../../types/boxModel';
 
 export default function calculateSpacingFromTheme(
   rule: 'margin' | 'padding',
