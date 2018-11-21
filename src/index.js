@@ -2,12 +2,11 @@
 import 'normalize.css';
 import * as React from 'react';
 import { render } from 'react-dom';
-import { ThemeProvider } from 'styled-components';
+
 import WebFont from 'webfontloader';
 import globalStyle from './styles/globals';
 
-import theme from './styles/theme';
-import Router from './containers/router/router';
+import App from './containers/app';
 
 WebFont.load({
   google: {
@@ -23,9 +22,4 @@ if (!element) {
   throw new Error("couldn't find element with id 'app-target'");
 }
 
-render(
-  <ThemeProvider theme={theme()}>
-    <Router />
-  </ThemeProvider>,
-  element,
-);
+render(<App />, element);
